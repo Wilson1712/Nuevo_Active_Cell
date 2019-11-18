@@ -1,6 +1,6 @@
 <?php
 require "config.php";
-$url = isset($_GET['url']) ? $_GET['url']:"Index/index";
+$url = $_GET['url'] ?? "Index/index";
 $url = explode("/", $url);
 $controller = "";
 $method = "";
@@ -16,16 +16,29 @@ spl_autoload_register(function($class){
     if(file_exists(LBS.$class.".php")){
         require LBS.$class.".php";
     }
+
 });
-//$obj = new Controllers();
+require 'Controladores/Error.php';
+$error = new Errors();
+//$obj = new Controlador();
 //echo $controller."-----".$method;
-//LLAMAMOS A LOS CONTROLADORES
-$controllersPath = "Controllers/".$controller.'.php';
+
+//LLamado de los controladores
+
+$controllersPath = 'Controladores/'.$controller.'.php';
 if(file_exists($controllersPath)){
     require $controllersPath;
-    //instanciamos de la clase
+    //Instanciamos la clase
     $controller = new $controller();
+    if(isset($method)){
+        if(method_exists($controller, $method)){
+            $controller->{$method}();
+        }else{
+            $error->error();
+        }
+    }
 }else{
-
+    $error->error();
 }
+
 ?>

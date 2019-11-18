@@ -1,8 +1,12 @@
-<?php
-class Index
-{
-    public function __construct(){
-        echo "Controlador index";
+<?php 
+    class Index extends Controlador{
+        public function __construct(){
+            parent::__construct();
+        }
+
+        public function index(){
+           // echo "Metodo index";
+        }
+
     }
-}
 ?>

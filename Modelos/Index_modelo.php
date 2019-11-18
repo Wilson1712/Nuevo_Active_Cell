@@ -5,7 +5,7 @@
         }
 
         function indexmodelo(){
-            echo "Metodo Modelo ";
+            echo "Metodo Modelo index";
         }
     }
 ?>
