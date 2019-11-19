@@ -1,6 +1,6 @@
 <?php
 require "config.php";
-$url = $_GET['url'] ?? "Index/index";
+$url = isset($_GET['url']) ? $_GET['url']: "Index/index";
 $url = explode("/", $url);
 $controller = "";
 $method = "";
