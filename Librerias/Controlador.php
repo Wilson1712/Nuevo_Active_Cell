@@ -1,6 +1,7 @@
 <?php 
     class Controlador{
         public function __construct(){
+            $this->view = new Vista();
             $this->loadClassmodelos();
             //echo "sistema de php";
         }
