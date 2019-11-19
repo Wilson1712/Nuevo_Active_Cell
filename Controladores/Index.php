@@ -6,7 +6,7 @@
 
         public function index(){
            // echo "Metodo index";
-           %this->vist
+           $this->view->render($this,"index");
         }
 
     }
