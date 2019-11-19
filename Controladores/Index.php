@@ -6,6 +6,7 @@
 
         public function index(){
            // echo "Metodo index";
+           %this->vist
         }
 
     }
