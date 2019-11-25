@@ -7,6 +7,6 @@ var loginUser=() =>{
 }
 
 $().ready(()=>{
-    
+
     $("#login").validate()
 });

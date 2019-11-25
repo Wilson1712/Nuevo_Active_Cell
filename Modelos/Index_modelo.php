@@ -1,11 +1,11 @@
 <?php
     class Index_modelo{
         function __construct(){
-            $this->indexmodelo();
+           
         }
 
-        function indexmodelo(){
-            
+        function userlogin($email, $password){
+            return $password;
         }
     }
 ?>
