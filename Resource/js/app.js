@@ -5,6 +5,8 @@ var loginUser=() =>{
     var password = document.getElementById("password").value;
     usuarios.loginUser(email, password);
 }
+
 $().ready(()=>{
+    
     $("#login").validate()
 });
