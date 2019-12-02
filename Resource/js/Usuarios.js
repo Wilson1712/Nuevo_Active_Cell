@@ -3,6 +3,7 @@ class Usuarios{
 
     }
     loginUser(email, password){
+     //  alert(email);
         if(email == ""){
             document.getElementById("email").focus();
             M.toast({ html:'Ingrese el email', classes: 'rounded'});
@@ -14,10 +15,10 @@ class Usuarios{
                 if(validarEmail(email)){
                     if(6 <= password.length){
                         $.post(
-                            "Index/userlogin",
+                            "Index/userLogin",
                             {email, password},
-                            (responsive)=>{
-                                console.log(responsive);
+                            (respnose)=>{
+                                console.log(respnose);
                             }
                         );
                     }else{
@@ -29,6 +30,6 @@ class Usuarios{
                     M.toast({ html: 'Ingrese una dirección de correo electronico valida',classes: 'rounded' });
                 }
             }
-        }
+        }       
     }
 }

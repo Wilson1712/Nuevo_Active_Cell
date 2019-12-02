@@ -24,7 +24,7 @@
                 $sth = $this->pdo->prepare($query);
                 $sth->execute($parametro);
                 $responsive - $sth->fetch(PDO::FETCH_ASSOC);
-                return array("results"-> $responsive);
+                return array("results"=> $responsive);
             }catch(PDOException $e){
                 return $e->getMessage();
             }
